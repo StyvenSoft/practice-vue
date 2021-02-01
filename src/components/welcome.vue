@@ -1,20 +1,27 @@
 <template>
-    <h1>Welcome</h1>
-    <p>The static HTML</p>
-    <p>My name is {{ myName }} i'm my profile is {{ profile }}</p>
+  <h1>Welcome</h1>
+  <p>The static HTML</p>
+  <p>My name is {{ myName }} i'm my profile is {{ profile }}</p>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            myName: "Steveen Echeverri",
-            profile: "Developer"
-        }
-    }
-}
+const something = {
+  data() {
+    return {
+      myName: "Steveen Echeverri",
+      profile: "Developer",
+    };
+  },
+  mounted() {
+      this.myName = "Undefined"
+      console.log(this.myName); // Undefined
+  },
+};
+
+something.mounted() // This works in javascript
+
+export default something
 </script>
 
 <style scoped>
-
 </style>
