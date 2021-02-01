@@ -8,6 +8,18 @@
       {{ Math.sqrt(100) }}
   </p>
   <p v-html="rawHTML"></p>
+  <h2>My favorite languages</h2>
+  <ul>
+      <li v-for="lang in proLanguages" v-bind:key="lang">
+          {{ lang }}
+      </li>
+  </ul>
+  <h2>My favorite Programs</h2>
+  <ul>
+      <li v-for="(pro, index) in programs" v-bind:key="pro.name">
+          {{ index + 1 }} - {{ pro.name }}
+      </li>
+  </ul>
 </template>
 
 <script>
@@ -26,6 +38,18 @@ export default {
       myName: "Steveen Echeverri",
       profile: "Developer",
       rawHTML: "<strong>Template html</strong>",
+      proLanguages: ["Javascript", "Python", "PHP", "C#", "Ruby"],
+      programs: [
+          {
+              name: "Postman"
+          },
+          {
+              name: "Visual Studio code"
+          },
+          {
+              name: "NetBeans IDE"
+          },
+      ]
     };
   },
   methods: {
@@ -43,4 +67,5 @@ export default {
 </script>
 
 <style scoped>
+    ul { list-style: none; }
 </style>
