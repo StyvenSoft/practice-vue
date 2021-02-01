@@ -20,6 +20,9 @@
           {{ index + 1 }} - {{ pro.name }}
       </li>
   </ul>
+  <h2>Random number</h2>
+  <p>Number: {{ randNumber }} <button v-on:click="aMehtod">Change Number</button></p>
+  
 </template>
 
 <script>
@@ -49,13 +52,18 @@ export default {
           {
               name: "NetBeans IDE"
           },
-      ]
+      ],
+      randNumber: Math.random(),
     };
   },
   methods: {
       messageAlert() {
           alert("New message enabled");
       },
+      aMehtod() {
+          this.randNumber = Math.random()
+          console.log("I was called");
+      }
   },
   mounted() {
     //   this.myName = "Undefined"
