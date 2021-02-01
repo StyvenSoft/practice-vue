@@ -1,12 +1,13 @@
 <template>
   <h1>Welcome</h1>
   <p>The static HTML</p>
-  <p>My name is {{ myName }} i'm my profile is {{ profile }}</p>
+  <p v-once>My name is {{ myName }} i'm my profile is {{ profile }}</p>
   <p>result sum: {{ 5 + 6 }}</p>
   <p>Conditional {{ 1 == 2 ? 'Correct' : 'Error'}} 
       {{ Math.random() > 0.5 ? 'True' : 'False'}}
       {{ Math.sqrt(100) }}
   </p>
+  <p v-html="rawHTML"></p>
 </template>
 
 <script>
@@ -24,6 +25,7 @@ export default {
     return {
       myName: "Steveen Echeverri",
       profile: "Developer",
+      rawHTML: "<strong>Template html</strong>",
     };
   },
   methods: {
