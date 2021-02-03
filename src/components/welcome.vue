@@ -30,6 +30,12 @@
   <input :value="createNumber" @input="func($event)" />
   <!-- <input v-model="createNumber" /> -->
   <button @click="changeNum">Click change</button>
+
+  <h1>Activities</h1>
+
+  <p>{{ keywords.join(' | ') }}</p>
+  <input :value="inputValue" @keyup.space="processInput($event)" />
+
 </template>
 
 <script>
@@ -60,6 +66,9 @@ export default {
       ],
       randNumber: Math.random(),
       createNumber: 1,
+      inputValue: "",
+      index: 0,
+      keywords: [],
     };
   },
   methods: {
@@ -75,6 +84,12 @@ export default {
     },
     changeNum() {
       this.createNumber = 100;
+    },
+    processInput(event) {
+        const value = event.target.value;
+        this.keywords[this.index] = value;
+        this.inputValue = "";
+        this.index++;
     },
   },
   mounted() {
