@@ -1,20 +1,23 @@
 <!-- View section -->
 <template>
-  <Welcome />
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Hello world friends!"/>
+  <Welcome />
+  <SpeedTyper />
 </template>
 
 <!-- Logic section -->
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Welcome from './components/welcome.vue'
+import SpeedTyper from './components/speedTyper.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Welcome
+    Welcome,
+    SpeedTyper
   }
 }
 </script>
