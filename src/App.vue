@@ -4,6 +4,7 @@
   <HelloWorld msg="Hello world friends!"/>
   <Welcome />
   <SpeedTyper />
+  <VueBasics />
 </template>
 
 <!-- Logic section -->
@@ -11,13 +12,15 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Welcome from './components/welcome.vue'
 import SpeedTyper from './components/speedTyper.vue'
+import VueBasics from './components/vueBasics.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Welcome,
-    SpeedTyper
+    SpeedTyper,
+    VueBasics
   }
 }
 </script>
