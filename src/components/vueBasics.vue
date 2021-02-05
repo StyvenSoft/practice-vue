@@ -16,6 +16,12 @@
             :disabled="email.length < 2"
     >Submit</button>
 
+    <br><br>
+    <input v-model="newCat">
+    <button v-on:click="addKit" v-on:keyup.enter="addKit">+ Add</button>
+    <ul>
+        <li v-for="cat in cats" v-bind:key="cat">{{ cat.name.toUpperCase() }}</li>
+    </ul>
 </template>
 
 <script>
@@ -25,8 +31,23 @@ export default {
             greeting: "Hello ",
             count: 0,
             email: '',
+            cats: [
+                { name: 'Tom'},
+                { name: 'Simba'},
+                { name: 'Coco'},
+                { name: 'Fenix'},
+                { name: 'Nino'},
+                { name: 'Romeo'},
+            ],
+            newCat: '',
         }
-    }
+    },
+    methods: {
+    addKit: function() {
+            this.cats.push({name: this.newCat})
+            this.newCat = ''
+        }
+    },
 }
 </script>
 
